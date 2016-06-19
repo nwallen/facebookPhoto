@@ -9,11 +9,22 @@
 /* Begin PBXBuildFile section */
 		B1EB88751D1706F10065EAAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88741D1706F10065EAAB /* AppDelegate.swift */; };
 		B1EB88771D1706F10065EAAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88761D1706F10065EAAB /* ViewController.swift */; };
-		B1EB887A1D1706F10065EAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EB88781D1706F10065EAAB /* Main.storyboard */; };
-		B1EB887C1D1706F10065EAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EB887B1D1706F10065EAAB /* Assets.xcassets */; };
-		B1EB887F1D1706F10065EAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EB887D1D1706F10065EAAB /* LaunchScreen.storyboard */; };
 		B1EB888A1D1706F10065EAAB /* facebookPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88891D1706F10065EAAB /* facebookPhotoTests.swift */; };
 		B1EB88951D1706F10065EAAB /* facebookPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88941D1706F10065EAAB /* facebookPhotoUITests.swift */; };
+		B1EB88A31D1707330065EAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EB88A21D1707330065EAAB /* Main.storyboard */; };
+		B1EB88A51D1707520065EAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EB88A41D1707520065EAAB /* LaunchScreen.storyboard */; };
+		B1EB88A71D17077E0065EAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EB88A61D17077E0065EAAB /* Assets.xcassets */; };
+		B1EB88B31D1707930065EAAB /* CheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88A81D1707930065EAAB /* CheckinViewController.swift */; };
+		B1EB88B41D1707930065EAAB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88A91D1707930065EAAB /* Common.swift */; };
+		B1EB88B51D1707930065EAAB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AA1D1707930065EAAB /* FeedViewController.swift */; };
+		B1EB88B61D1707930065EAAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AB1D1707930065EAAB /* LoginViewController.swift */; };
+		B1EB88B71D1707930065EAAB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AC1D1707930065EAAB /* MessagesViewController.swift */; };
+		B1EB88B81D1707930065EAAB /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AD1D1707930065EAAB /* MoreViewController.swift */; };
+		B1EB88B91D1707930065EAAB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AE1D1707930065EAAB /* NotificationsViewController.swift */; };
+		B1EB88BA1D1707930065EAAB /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88AF1D1707930065EAAB /* PhotoViewController.swift */; };
+		B1EB88BB1D1707930065EAAB /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88B01D1707930065EAAB /* RequestsViewController.swift */; };
+		B1EB88BC1D1707930065EAAB /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88B11D1707930065EAAB /* StatusViewController.swift */; };
+		B1EB88BD1D1707930065EAAB /* ThrillistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EB88B21D1707930065EAAB /* ThrillistDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +48,6 @@
 		B1EB88711D1706F10065EAAB /* facebookPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebookPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB88741D1706F10065EAAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EB88761D1706F10065EAAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B1EB88791D1706F10065EAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1EB887B1D1706F10065EAAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B1EB887E1D1706F10065EAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1EB88801D1706F10065EAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EB88851D1706F10065EAAB /* facebookPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = facebookPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB88891D1706F10065EAAB /* facebookPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facebookPhotoTests.swift; sourceTree = "<group>"; };
@@ -47,6 +55,20 @@
 		B1EB88901D1706F10065EAAB /* facebookPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = facebookPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EB88941D1706F10065EAAB /* facebookPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facebookPhotoUITests.swift; sourceTree = "<group>"; };
 		B1EB88961D1706F10065EAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1EB88A21D1707330065EAAB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B1EB88A41D1707520065EAAB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1EB88A61D17077E0065EAAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1EB88A81D1707930065EAAB /* CheckinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckinViewController.swift; sourceTree = "<group>"; };
+		B1EB88A91D1707930065EAAB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		B1EB88AA1D1707930065EAAB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B1EB88AB1D1707930065EAAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B1EB88AC1D1707930065EAAB /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		B1EB88AD1D1707930065EAAB /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		B1EB88AE1D1707930065EAAB /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		B1EB88AF1D1707930065EAAB /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		B1EB88B01D1707930065EAAB /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		B1EB88B11D1707930065EAAB /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		B1EB88B21D1707930065EAAB /* ThrillistDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrillistDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +121,20 @@
 			children = (
 				B1EB88741D1706F10065EAAB /* AppDelegate.swift */,
 				B1EB88761D1706F10065EAAB /* ViewController.swift */,
-				B1EB88781D1706F10065EAAB /* Main.storyboard */,
-				B1EB887B1D1706F10065EAAB /* Assets.xcassets */,
-				B1EB887D1D1706F10065EAAB /* LaunchScreen.storyboard */,
+				B1EB88A21D1707330065EAAB /* Main.storyboard */,
+				B1EB88A61D17077E0065EAAB /* Assets.xcassets */,
+				B1EB88A41D1707520065EAAB /* LaunchScreen.storyboard */,
+				B1EB88A81D1707930065EAAB /* CheckinViewController.swift */,
+				B1EB88A91D1707930065EAAB /* Common.swift */,
+				B1EB88AA1D1707930065EAAB /* FeedViewController.swift */,
+				B1EB88AB1D1707930065EAAB /* LoginViewController.swift */,
+				B1EB88AC1D1707930065EAAB /* MessagesViewController.swift */,
+				B1EB88AD1D1707930065EAAB /* MoreViewController.swift */,
+				B1EB88AE1D1707930065EAAB /* NotificationsViewController.swift */,
+				B1EB88AF1D1707930065EAAB /* PhotoViewController.swift */,
+				B1EB88B01D1707930065EAAB /* RequestsViewController.swift */,
+				B1EB88B11D1707930065EAAB /* StatusViewController.swift */,
+				B1EB88B21D1707930065EAAB /* ThrillistDetailViewController.swift */,
 				B1EB88801D1706F10065EAAB /* Info.plist */,
 			);
 			path = facebookPhoto;
@@ -229,9 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1EB887F1D1706F10065EAAB /* LaunchScreen.storyboard in Resources */,
-				B1EB887C1D1706F10065EAAB /* Assets.xcassets in Resources */,
-				B1EB887A1D1706F10065EAAB /* Main.storyboard in Resources */,
+				B1EB88A51D1707520065EAAB /* LaunchScreen.storyboard in Resources */,
+				B1EB88A71D17077E0065EAAB /* Assets.xcassets in Resources */,
+				B1EB88A31D1707330065EAAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +289,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1EB88B91D1707930065EAAB /* NotificationsViewController.swift in Sources */,
+				B1EB88B61D1707930065EAAB /* LoginViewController.swift in Sources */,
+				B1EB88BB1D1707930065EAAB /* RequestsViewController.swift in Sources */,
+				B1EB88B71D1707930065EAAB /* MessagesViewController.swift in Sources */,
+				B1EB88BC1D1707930065EAAB /* StatusViewController.swift in Sources */,
+				B1EB88B41D1707930065EAAB /* Common.swift in Sources */,
 				B1EB88771D1706F10065EAAB /* ViewController.swift in Sources */,
+				B1EB88B51D1707930065EAAB /* FeedViewController.swift in Sources */,
+				B1EB88B81D1707930065EAAB /* MoreViewController.swift in Sources */,
+				B1EB88BD1D1707930065EAAB /* ThrillistDetailViewController.swift in Sources */,
+				B1EB88B31D1707930065EAAB /* CheckinViewController.swift in Sources */,
 				B1EB88751D1706F10065EAAB /* AppDelegate.swift in Sources */,
+				B1EB88BA1D1707930065EAAB /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +335,6 @@
 			targetProxy = B1EB88911D1706F10065EAAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B1EB88781D1706F10065EAAB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1EB88791D1706F10065EAAB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B1EB887D1D1706F10065EAAB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1EB887E1D1706F10065EAAB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B1EB88971D1706F10065EAAB /* Debug */ = {
