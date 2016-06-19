@@ -15,8 +15,8 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    var selectedPhoto: UIImage!
-    
+    var selectedPhotoView: UIImageView!
+    var photoTransition: PhotoTransition!
     
     // Right before the ViewController "appears"...
     override func viewWillAppear(animated: Bool) {
@@ -49,7 +49,7 @@ class FeedViewController: UIViewController {
     
     @IBAction func didTapPhoto(sender: AnyObject) {
         let selectedView = sender.view as! UIImageView
-        selectedPhoto = selectedView.image
+        selectedPhotoView = selectedView
         performSegueWithIdentifier("photoView", sender: self)
     
     }
@@ -58,10 +58,19 @@ class FeedViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
       let destinationViewController = segue.destinationViewController as! PhotoViewController
-    
-        destinationViewController.expandedPhoto = selectedPhoto
-    
+        
+        destinationViewController.expandedPhoto = selectedPhotoView.image
+        
+        
+        photoTransition = PhotoTransition()
+        
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = photoTransition
+        
+        photoTransition.duration = 0.3
+        photoTransition.selectedPhotoView = selectedPhotoView
         
         // Pass the selected object to the new view controller.
     }
