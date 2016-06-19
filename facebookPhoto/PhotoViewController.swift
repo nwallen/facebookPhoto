@@ -8,18 +8,46 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var actionsView: UIImageView!
+    @IBOutlet weak var doneButtonView: UIImageView!
     
     var expandedPhoto: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
+        scrollView.contentSize = photoView.frame.size
 
+        scrollView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        UIView.animateWithDuration(0.2){
+            self.actionsView.alpha = 0
+            self.doneButtonView.alpha = 0
+        }
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var alpha = convertValue(abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y) , r1Min: 0, r1Max: 60, r2Min: 1.0, r2Max: 0.6)
+        if alpha < 0.6 {
+            alpha = 0.6
+        }
+        self.view.backgroundColor = UIColor(white: 0, alpha: alpha)
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        UIView.animateWithDuration(0.2){
+            self.actionsView.alpha = 1
+            self.doneButtonView.alpha = 1
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
