@@ -220,7 +220,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wedding2" id="gRI-zA-loQ">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding2" id="gRI-zA-loQ">
                                         <rect key="frame" x="0.0" y="53" width="320" height="464"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -231,11 +231,11 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="doneButton" id="ePf-3p-oZz">
-                                <rect key="frame" x="9" y="21" width="51" height="27"/>
+                                <rect key="frame" x="250" y="20" width="51" height="27"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2el-Mp-kOV">
-                                <rect key="frame" x="2" y="20" width="66" height="30"/>
+                                <rect key="frame" x="250" y="20" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapDone:" destination="f8N-IR-yR1" eventType="touchUpInside" id="oPV-zE-vo7"/>

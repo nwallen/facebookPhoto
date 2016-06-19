@@ -36,7 +36,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        var alpha = convertValue(abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y) , r1Min: 0, r1Max: 60, r2Min: 1.0, r2Max: 0.6)
+        let combinedOffset = abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y)
+        var alpha = convertValue(combinedOffset , r1Min: 0, r1Max: 60, r2Min: 1.0, r2Max: 0.6)
         if alpha < 0.6 {
             alpha = 0.6
         }
@@ -44,9 +45,18 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        UIView.animateWithDuration(0.2){
-            self.actionsView.alpha = 1
-            self.doneButtonView.alpha = 1
+        
+        let combinedOffset = abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y)
+        if combinedOffset > 60 {
+            dismissViewControllerAnimated(true
+            , completion: { () -> Void in
+                
+            })
+        } else {
+            UIView.animateWithDuration(0.2){
+                self.actionsView.alpha = 1
+                self.doneButtonView.alpha = 1
+            }
         }
     }
     
