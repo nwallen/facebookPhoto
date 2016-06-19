@@ -35,6 +35,17 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    func scrollViewWillBeginZooming(scrollView: UIScrollView, withView view: UIView?) {
+        UIView.animateWithDuration(0.2){
+            self.actionsView.alpha = 0
+            self.doneButtonView.alpha = 0
+        }
+    }
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
+        return photoView
+    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let combinedOffset = abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y)
         var alpha = convertValue(combinedOffset , r1Min: 0, r1Max: 60, r2Min: 1.0, r2Max: 0.6)

@@ -24,7 +24,14 @@ class PhotoTransition: BaseTransition {
         tempImageView.contentMode = UIViewContentMode.ScaleAspectFill
         tempImageView.clipsToBounds = true
         tempImageView.image = selectedPhotoView.image
-        feedViewController.view.addSubview(tempImageView)
+       
+        let tempBackgroundView = UIView()
+        tempBackgroundView.backgroundColor = UIColor(white: 0, alpha: 1)
+        tempBackgroundView.alpha = 0
+        tempBackgroundView.frame = CGRect(x: 0, y: 0, width: 320, height: 568)
+        
+        tabViewController.view.addSubview(tempBackgroundView)
+        tabViewController.view.addSubview(tempImageView)
         
         tempImageView.frame = feedViewController.view.convertRect(selectedPhotoView.frame, fromCoordinateSpace: selectedPhotoView.superview!)
         
@@ -35,15 +42,21 @@ class PhotoTransition: BaseTransition {
         
         let targetFrame = toViewController.view.convertRect(toViewController.photoView.frame, fromCoordinateSpace: toViewController.photoView.superview!)
         
-        UIView.animateWithDuration(duration, animations: {
+        
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 14, options: [], animations: { () -> Void in
             self.tempImageView.frame = targetFrame
-        }) { (finished: Bool) -> Void in
-            UIView.animateWithDuration(0.2, animations: {
-                toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
-                    self.tempImageView.removeFromSuperview()
-                    self.finish()
-            }
+            tempBackgroundView.alpha = 1
+            }) { (Bool) -> Void in
+                
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    toViewController.view.alpha = 1
+
+                    }, completion: { (Bool) -> Void in
+                        self.tempImageView.removeFromSuperview()
+                        tempBackgroundView.removeFromSuperview()
+                        self.finish()
+                        
+                })
         }
     }
     
@@ -65,17 +78,30 @@ class PhotoTransition: BaseTransition {
         
         UIView.animateWithDuration(0.1, animations: {
             fromViewController.view.alpha = 0
-          
+            
             }) { (finished: Bool) -> Void in
-                UIView.animateWithDuration(self.duration, animations: {
+                UIView.animateWithDuration(self.duration * 0.65, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 10, options: [], animations: { () -> Void in
+                    fromViewController.view.alpha = 0
                     self.tempImageView.frame = feedViewController.view.convertRect( self.selectedPhotoView.frame, fromCoordinateSpace: self.selectedPhotoView.superview!)
-                  
-                    }) { (finished: Bool) -> Void in
-                        self.tempImageView.removeFromSuperview()
-                        self.finish()
-                        
+                }){ (Bool) -> Void in
+                    self.tempImageView.removeFromSuperview()
+                    self.finish()
                 }
         }
-     
+        
+//        UIView.animateWithDuration(0.1, animations: {
+//            fromViewController.view.alpha = 0
+//          
+//            }) { (finished: Bool) -> Void in
+//                UIView.animateWithDuration(self.duration * 0.5, animations: {
+//                    self.tempImageView.frame = feedViewController.view.convertRect( self.selectedPhotoView.frame, fromCoordinateSpace: self.selectedPhotoView.superview!)
+//                  
+//                    }) { (finished: Bool) -> Void in
+//                        self.tempImageView.removeFromSuperview()
+//                        self.finish()
+//                        
+//                }
+//        }
+//     
     }
 }

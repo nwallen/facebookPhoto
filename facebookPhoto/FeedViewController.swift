@@ -69,7 +69,7 @@ class FeedViewController: UIViewController {
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationViewController.transitioningDelegate = photoTransition
         
-        photoTransition.duration = 0.3
+        photoTransition.duration = 0.6
         photoTransition.selectedPhotoView = selectedPhotoView
         
         // Pass the selected object to the new view controller.
