@@ -10,10 +10,20 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    var expandedPhoto: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        photoView.image = expandedPhoto
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +35,12 @@ class PhotoViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func didTapDone(sender: AnyObject) {
+        dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

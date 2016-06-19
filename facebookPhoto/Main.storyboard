@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ka8-3N-Zrb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ka8-3N-Zrb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -8,7 +8,7 @@
         <!--Requests View Controller-->
         <scene sceneID="GXX-nf-IQb">
             <objects>
-                <viewController id="S5O-Lr-z3p" customClass="RequestsViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S5O-Lr-z3p" customClass="RequestsViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSa-Wx-lXf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
         <!--Status View Controller-->
         <scene sceneID="1st-UV-yDX">
             <objects>
-                <viewController id="njc-yy-MUx" customClass="StatusViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="njc-yy-MUx" customClass="StatusViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="daI-2G-IwS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,64 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-1043" y="2576"/>
         </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="dbg-CE-oft">
-            <objects>
-                <viewController id="6ll-hg-bUH" customClass="PhotoViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WxR-Nz-ZjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_photo" id="b0e-iy-njJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mpx-VQ-ASC">
-                                <rect key="frame" x="4" y="24" width="67" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onCancelTap:" destination="6ll-hg-bUH" eventType="touchUpInside" id="3mO-Zi-mJL"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VRk-ZF-aST" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-681" y="2576"/>
-        </scene>
-        <!--Checkin View Controller-->
-        <scene sceneID="Ehi-rC-dF2">
-            <objects>
-                <viewController id="okj-as-wP4" customClass="CheckinViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dRD-hr-jxp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_checkin" id="Jrk-XE-ONq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vhl-tE-CoD">
-                                <rect key="frame" x="4" y="25" width="67" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onCancelTap:" destination="okj-as-wP4" eventType="touchUpInside" id="maH-lc-gaf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G6B-qJ-53q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-309" y="2576"/>
-        </scene>
         <!--Feed View Controller-->
         <scene sceneID="T0t-mN-xxs">
             <objects>
-                <viewController id="R5A-Fy-R9i" customClass="FeedViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R5A-Fy-R9i" customClass="FeedViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6R-Hr-ZN3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="868"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,23 +93,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tsb-ZI-gJi">
                                 <rect key="frame" x="105" y="66" width="111" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="6ll-hg-bUH" kind="modal" id="Ngg-Hd-uKE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B2T-25-lrT">
                                 <rect key="frame" x="209" y="66" width="111" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="okj-as-wP4" kind="modal" id="r85-8j-EUx"/>
-                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="0CJ-We-2g8">
                                 <rect key="frame" x="0.0" y="107" width="320" height="761"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_feed" id="YAN-0Y-z3Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1025"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_feed-1" id="YAN-0Y-z3Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1438"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="bdg-Y0-p7G">
@@ -171,19 +111,59 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8jz-YU-jqh">
-                                        <rect key="frame" x="8" y="230" width="304" height="330"/>
+                                        <rect key="frame" x="19" y="638" width="264" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Zbj-C5-bfO" kind="push" identifier="" id="00a-gi-BcY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iPD-Xs-B6m">
-                                        <rect key="frame" x="111" y="602" width="97" height="30"/>
+                                        <rect key="frame" x="116" y="758" width="97" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <segue destination="Zbj-C5-bfO" kind="push" identifier="commentButton" id="NWS-zA-Tpj"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding2" id="mxX-5C-qGV">
+                                        <rect key="frame" x="4" y="239" width="153" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="NME-ZH-3Bb" appends="YES" id="bwm-s6-Pt5"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding1" id="MgE-Aj-HMm">
+                                        <rect key="frame" x="4" y="83" width="153" height="153"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="92u-In-E4P" appends="YES" id="pLD-Xj-1xC"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding3" id="7ul-kK-8n1">
+                                        <rect key="frame" x="160" y="83" width="155" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jwJ-Su-YHq" appends="YES" id="XPC-hq-hvj"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding4" id="ffw-gp-Zye">
+                                        <rect key="frame" x="161" y="188" width="155" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dod-Gz-OAp" appends="YES" id="M8Q-Vl-rjc"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding5" id="Zeb-Jh-vVg">
+                                        <rect key="frame" x="161" y="294" width="155" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3ay-J9-aV0" appends="YES" id="0jx-Q4-62S"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -196,16 +176,87 @@
                         <outlet property="imageView" destination="YAN-0Y-z3Z" id="irS-n1-jDS"/>
                         <outlet property="loadingIndicator" destination="bdg-Y0-p7G" id="dlI-CE-eRm"/>
                         <outlet property="scrollView" destination="0CJ-We-2g8" id="bU7-FE-j1d"/>
+                        <segue destination="f8N-IR-yR1" kind="modal" identifier="photoView" modalTransitionStyle="crossDissolve" id="dKO-os-93R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGP-5l-eRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="92u-In-E4P">
+                    <connections>
+                        <action selector="didTapPhoto:" destination="R5A-Fy-R9i" id="02D-US-Dcx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NME-ZH-3Bb">
+                    <connections>
+                        <action selector="didTapPhoto:" destination="R5A-Fy-R9i" id="PAD-RO-XeC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jwJ-Su-YHq">
+                    <connections>
+                        <action selector="didTapPhoto:" destination="R5A-Fy-R9i" id="PT7-gW-aeB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Dod-Gz-OAp">
+                    <connections>
+                        <action selector="didTapPhoto:" destination="R5A-Fy-R9i" id="VUr-41-beC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3ay-J9-aV0">
+                    <connections>
+                        <action selector="didTapPhoto:" destination="R5A-Fy-R9i" id="aSs-6c-0R5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="135" y="2650"/>
+            <point key="canvasLocation" x="257" y="3368"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="jf2-ly-6vS">
+            <objects>
+                <viewController id="f8N-IR-yR1" customClass="PhotoViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K1G-JI-poK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1bq-KO-Fui">
+                                <rect key="frame" x="0.0" y="53" width="320" height="464"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wedding2" id="gRI-zA-loQ">
+                                        <rect key="frame" x="1" y="0.0" width="319" height="464"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_actions" id="iZa-5Q-0Ct">
+                                <rect key="frame" x="2" y="518" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="doneButton" id="ePf-3p-oZz">
+                                <rect key="frame" x="9" y="21" width="51" height="27"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2el-Mp-kOV">
+                                <rect key="frame" x="2" y="20" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapDone:" destination="f8N-IR-yR1" eventType="touchUpInside" id="oPV-zE-vo7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoView" destination="gRI-zA-loQ" id="ATJ-tc-JfD"/>
+                        <outlet property="scrollView" destination="1bq-KO-Fui" id="oyv-wO-1N5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRn-vZ-hBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="3226"/>
         </scene>
         <!--Thrillist Detail View Controller-->
         <scene sceneID="jZZ-mG-EZm">
             <objects>
-                <viewController id="Zbj-C5-bfO" customClass="ThrillistDetailViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zbj-C5-bfO" customClass="ThrillistDetailViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p5F-ug-gp9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="868"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,12 +340,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-252" y="3749"/>
+            <point key="canvasLocation" x="-681" y="3421"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="SIy-o9-xMu">
             <objects>
-                <viewController id="1dn-e4-mAG" customClass="MessagesViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1dn-e4-mAG" customClass="MessagesViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7F7-J7-p2F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,7 +380,7 @@
         <!--Notifications View Controller-->
         <scene sceneID="Hib-Hb-ehJ">
             <objects>
-                <viewController id="7iJ-fB-gwb" customClass="NotificationsViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7iJ-fB-gwb" customClass="NotificationsViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QlD-9T-VfO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,7 +416,7 @@
         <!--More View Controller-->
         <scene sceneID="XGb-n2-iQ9">
             <objects>
-                <viewController id="dzy-2M-WAz" customClass="MoreViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dzy-2M-WAz" customClass="MoreViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ne-iv-Z1J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +462,7 @@
         <!--Login View Controller-->
         <scene sceneID="29o-d6-F7h">
             <objects>
-                <viewController id="qV9-rh-kvT" customClass="LoginViewController" customModule="FacebookLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qV9-rh-kvT" customClass="LoginViewController" customModule="facebookPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rQw-3v-v7V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,12 +684,11 @@
     <resources>
         <image name="comment_bar" width="320" height="44"/>
         <image name="compose" width="320" height="46"/>
-        <image name="create_checkin" width="320" height="568"/>
-        <image name="create_photo" width="320" height="568"/>
         <image name="create_status" width="320" height="568"/>
+        <image name="doneButton" width="51" height="27"/>
         <image name="feed_tab" width="27" height="27"/>
         <image name="form_bg" width="295" height="95"/>
-        <image name="home_feed" width="320" height="1025"/>
+        <image name="home_feed-1" width="320" height="1438"/>
         <image name="like_btn" width="17" height="40"/>
         <image name="like_btn_selected" width="17" height="40"/>
         <image name="logging_in_button" width="293" height="52"/>
@@ -653,9 +703,15 @@
         <image name="notifications" width="320" height="818"/>
         <image name="notifications_tab" width="27" height="27"/>
         <image name="people" width="320" height="1006"/>
+        <image name="photo_actions" width="320" height="44"/>
         <image name="requests_tab" width="27" height="27"/>
         <image name="settings" width="320" height="1800"/>
         <image name="thrillist_detail" width="320" height="1203"/>
+        <image name="wedding1" width="320" height="480"/>
+        <image name="wedding2" width="480" height="320"/>
+        <image name="wedding3" width="480" height="320"/>
+        <image name="wedding4" width="480" height="320"/>
+        <image name="wedding5" width="480" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NWS-zA-Tpj"/>

@@ -15,25 +15,26 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    var selectedPhoto: UIImage!
     
     
     // Right before the ViewController "appears"...
     override func viewWillAppear(animated: Bool) {
         // hide feed ImageView
-        imageView.hidden = true
+        //imageView.hidden = true
         // turn on the activity indicator
-        loadingIndicator.startAnimating()
+        //loadingIndicator.startAnimating()
     }
     
     // The moment the ViewController "appears"...
     override func viewDidAppear(animated: Bool) {
         // Delay for 2 seconds before...
-        delay(2) { () -> () in
-            // show the feed ImageView
-            self.imageView.hidden = false
-            // Stop the activity indicator
-            self.loadingIndicator.stopAnimating()
-        }
+//        delay(2) { () -> () in
+//            // show the feed ImageView
+//            self.imageView.hidden = false
+//            // Stop the activity indicator
+//            self.loadingIndicator.stopAnimating()
+        //}
     }
     
     override func viewDidLoad() {
@@ -46,15 +47,23 @@ class FeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapPhoto(sender: AnyObject) {
+        let selectedView = sender.view as! UIImageView
+        selectedPhoto = selectedView.image
+        performSegueWithIdentifier("photoView", sender: self)
+    
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+      let destinationViewController = segue.destinationViewController as! PhotoViewController
+    
+        destinationViewController.expandedPhoto = selectedPhoto
+    
+        
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
