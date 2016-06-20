@@ -13,10 +13,34 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var fullScrollView: UIScrollView!
+    
     @IBOutlet weak var actionsView: UIImageView!
     @IBOutlet weak var doneButtonView: UIImageView!
     
     var expandedPhoto: UIImage!
+    var photos: [UIImageView]!
+    var selectedIndex: Int!
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        photoView.image = expandedPhoto
+        createPhotoScroll()
+        fullScrollView.contentSize = CGSize(width: 320 * photos.count - 1, height: 568)
+        fullScrollView.contentOffset = CGPointMake(fullScrollView.frame.size.width * CGFloat(selectedIndex), 0);
+    }
+    
+    func createPhotoScroll(){
+        for i in 0...photos.count - 1 {
+            let thisPhoto = UIImageView()
+            thisPhoto.image = photos[i].image
+            
+            let scaleFactor =   320 / thisPhoto.image!.size.width
+            thisPhoto.frame = CGRect(x: CGFloat(320 * i), y: 0, width: 320, height: thisPhoto.image!.size.height * scaleFactor)
+            thisPhoto.center.y = 568/2
+            fullScrollView.addSubview(thisPhoto)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +49,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
         scrollView.delegate = self
         // Do any additional setup after loading the view.
+        
+        
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -69,10 +95,6 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
                 self.doneButtonView.alpha = 1
             }
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        photoView.image = expandedPhoto
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,8 +15,12 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    
+    @IBOutlet var imageViews: [UIImageView]!
+    
     var selectedPhotoView: UIImageView!
     var photoTransition: PhotoTransition!
+    var selectedIndex: Int!
     
     // Right before the ViewController "appears"...
     override func viewWillAppear(animated: Bool) {
@@ -49,6 +53,7 @@ class FeedViewController: UIViewController {
     
     @IBAction func didTapPhoto(sender: AnyObject) {
         let selectedView = sender.view as! UIImageView
+        selectedIndex = selectedView.tag
         selectedPhotoView = selectedView
         performSegueWithIdentifier("photoView", sender: self)
     
@@ -62,7 +67,8 @@ class FeedViewController: UIViewController {
       let destinationViewController = segue.destinationViewController as! PhotoViewController
         
         destinationViewController.expandedPhoto = selectedPhotoView.image
-        
+        destinationViewController.photos = imageViews
+        destinationViewController.selectedIndex = selectedIndex
         
         photoTransition = PhotoTransition()
         

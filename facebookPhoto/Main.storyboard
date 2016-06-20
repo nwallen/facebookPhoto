@@ -124,7 +124,7 @@
                                             <segue destination="Zbj-C5-bfO" kind="push" identifier="commentButton" id="NWS-zA-Tpj"/>
                                         </connections>
                                     </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding2" id="mxX-5C-qGV">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleAspectFill" image="wedding2" id="mxX-5C-qGV">
                                         <rect key="frame" x="4" y="239" width="153" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -140,7 +140,7 @@
                                             <outletCollection property="gestureRecognizers" destination="92u-In-E4P" appends="YES" id="pLD-Xj-1xC"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding3" id="7ul-kK-8n1">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" image="wedding3" id="7ul-kK-8n1">
                                         <rect key="frame" x="160" y="83" width="155" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -148,7 +148,7 @@
                                             <outletCollection property="gestureRecognizers" destination="jwJ-Su-YHq" appends="YES" id="XPC-hq-hvj"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding4" id="ffw-gp-Zye">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleAspectFill" image="wedding4" id="ffw-gp-Zye">
                                         <rect key="frame" x="161" y="188" width="155" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -156,7 +156,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Dod-Gz-OAp" appends="YES" id="M8Q-Vl-rjc"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding5" id="Zeb-Jh-vVg">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleAspectFill" image="wedding5" id="Zeb-Jh-vVg">
                                         <rect key="frame" x="161" y="294" width="155" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -176,6 +176,11 @@
                         <outlet property="imageView" destination="YAN-0Y-z3Z" id="irS-n1-jDS"/>
                         <outlet property="loadingIndicator" destination="bdg-Y0-p7G" id="dlI-CE-eRm"/>
                         <outlet property="scrollView" destination="0CJ-We-2g8" id="bU7-FE-j1d"/>
+                        <outletCollection property="imageViews" destination="MgE-Aj-HMm" collectionClass="NSMutableArray" id="DqL-as-TcE"/>
+                        <outletCollection property="imageViews" destination="7ul-kK-8n1" collectionClass="NSMutableArray" id="rGo-0s-Qct"/>
+                        <outletCollection property="imageViews" destination="mxX-5C-qGV" collectionClass="NSMutableArray" id="SK3-N3-WxJ"/>
+                        <outletCollection property="imageViews" destination="ffw-gp-Zye" collectionClass="NSMutableArray" id="kju-dT-SyY"/>
+                        <outletCollection property="imageViews" destination="Zeb-Jh-vVg" collectionClass="NSMutableArray" id="fzy-MR-8lB"/>
                         <segue destination="f8N-IR-yR1" kind="modal" identifier="photoView" modalTransitionStyle="crossDissolve" id="dKO-os-93R"/>
                     </connections>
                 </viewController>
@@ -216,11 +221,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="1bq-KO-Fui">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" id="6S8-sD-8qL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" id="1bq-KO-Fui">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="wedding2" id="gRI-zA-loQ">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleAspectFill" image="wedding2" id="gRI-zA-loQ">
                                         <rect key="frame" x="0.0" y="53" width="320" height="464"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -247,6 +256,7 @@
                     <connections>
                         <outlet property="actionsView" destination="iZa-5Q-0Ct" id="upB-3C-CFL"/>
                         <outlet property="doneButtonView" destination="ePf-3p-oZz" id="iTa-iM-Hre"/>
+                        <outlet property="fullScrollView" destination="6S8-sD-8qL" id="cmp-v9-tQa"/>
                         <outlet property="photoView" destination="gRI-zA-loQ" id="ATJ-tc-JfD"/>
                         <outlet property="scrollView" destination="1bq-KO-Fui" id="oyv-wO-1N5"/>
                     </connections>
