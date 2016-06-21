@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController, UIScrollViewDelegate {
+class PhotoViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -22,12 +22,20 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     var photos: [UIImageView]!
     var selectedIndex: Int!
     
+    var hScrollPhotos: [UIImageView] = []
+    var panGestureRecognizer: UIPanGestureRecognizer!
+    var swipeGestureRecognizer: UISwipeGestureRecognizer!
+    
+    var originalPhotoCenter: CGPoint!
+    var originalContentOffset: CGPoint!
     
     override func viewWillAppear(animated: Bool) {
         photoView.image = expandedPhoto
-        createPhotoScroll()
         fullScrollView.contentSize = CGSize(width: 320 * photos.count - 1, height: 568)
         fullScrollView.contentOffset = CGPointMake(fullScrollView.frame.size.width * CGFloat(selectedIndex), 0);
+        
+        fullScrollView.delegate = self;
+        createPhotoScroll()
     }
     
     func createPhotoScroll(){
@@ -39,6 +47,34 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
             thisPhoto.frame = CGRect(x: CGFloat(320 * i), y: 0, width: 320, height: thisPhoto.image!.size.height * scaleFactor)
             thisPhoto.center.y = 568/2
             fullScrollView.addSubview(thisPhoto)
+            hScrollPhotos.append(thisPhoto)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        destroyPhotoScroll()
+    }
+    
+    func destroyPhotoScroll(){
+        for i in 0...hScrollPhotos.count - 1 {
+            hScrollPhotos[i].removeFromSuperview()
+        }
+    }
+    
+    func showAllPhotos(){
+        for i in 0...hScrollPhotos.count - 1 {
+            hScrollPhotos[i].alpha = 1
+        }
+    }
+    
+    func showOnePhoto(photoIndex: Int){
+        for i in 0...hScrollPhotos.count - 1 {
+            if i != photoIndex {
+                hScrollPhotos[i].alpha = 0
+            } else {
+                hScrollPhotos[i].alpha = 1
+            }
+            
         }
     }
     
@@ -49,8 +85,6 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
         scrollView.delegate = self
         // Do any additional setup after loading the view.
-        
-        
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
@@ -69,25 +103,29 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
-        return photoView
+        return hScrollPhotos[selectedIndex]
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let combinedOffset = abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y)
-        var alpha = convertValue(combinedOffset , r1Min: 0, r1Max: 60, r2Min: 1.0, r2Max: 0.6)
+        let yOffset = abs(scrollView.contentOffset.y)
+        var alpha = convertValue(yOffset , r1Min: 0, r1Max: 100, r2Min: 1.0, r2Max: 0.6)
         if alpha < 0.6 {
             alpha = 0.6
         }
+        
+        if yOffset > 5{
+            showOnePhoto(selectedIndex)
+        }
+        
         self.view.backgroundColor = UIColor(white: 0, alpha: alpha)
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        let combinedOffset = abs(scrollView.contentOffset.x) + abs(scrollView.contentOffset.y)
-        if combinedOffset > 60 {
+        let combinedOffset = abs(scrollView.contentOffset.y)
+        if combinedOffset > 20 {
             dismissViewControllerAnimated(true
-            , completion: { () -> Void in
-                
+                , completion: { () -> Void in
+                    
             })
         } else {
             UIView.animateWithDuration(0.2){
@@ -95,6 +133,13 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
                 self.doneButtonView.alpha = 1
             }
         }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        selectedIndex = lround(Double(fullScrollView.contentOffset.x) / 320)
+         print(selectedIndex)
+        showAllPhotos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,14 +157,9 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer!, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer!) -> Bool {
+        return true
     }
-    */
-
+    
+    
 }

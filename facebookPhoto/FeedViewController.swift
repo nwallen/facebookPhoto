@@ -77,6 +77,7 @@ class FeedViewController: UIViewController {
         
         photoTransition.duration = 0.6
         photoTransition.selectedPhotoView = selectedPhotoView
+        photoTransition.imageViews = imageViews
         
         // Pass the selected object to the new view controller.
     }

@@ -12,6 +12,7 @@ class PhotoTransition: BaseTransition {
     
     var selectedPhotoView: UIImageView!
     var tempImageView: UIImageView!
+    var imageViews: [UIImageView]!
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
@@ -67,14 +68,16 @@ class PhotoTransition: BaseTransition {
         let feedViewController = navigationController.topViewController as! FeedViewController
         let fromViewController = fromViewController as! PhotoViewController
         
+        let fromPhoto = fromViewController.hScrollPhotos[fromViewController.selectedIndex]
+        let toPhoto = imageViews[fromViewController.selectedIndex]
         
         tempImageView = UIImageView()
         tempImageView.contentMode = UIViewContentMode.ScaleAspectFill
         tempImageView.clipsToBounds = true
-        tempImageView.image = selectedPhotoView.image
+        tempImageView.image = fromPhoto.image
         feedViewController.view.addSubview(tempImageView)
         
-        tempImageView.frame = fromViewController.view.convertRect(fromViewController.photoView.frame, fromCoordinateSpace: fromViewController.photoView.superview!)
+        tempImageView.frame = fromViewController.view.convertRect(fromPhoto.frame, fromCoordinateSpace: fromPhoto.superview!)
         
         UIView.animateWithDuration(0.1, animations: {
             fromViewController.view.alpha = 0
@@ -82,26 +85,12 @@ class PhotoTransition: BaseTransition {
             }) { (finished: Bool) -> Void in
                 UIView.animateWithDuration(self.duration * 0.65, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 10, options: [], animations: { () -> Void in
                     fromViewController.view.alpha = 0
-                    self.tempImageView.frame = feedViewController.view.convertRect( self.selectedPhotoView.frame, fromCoordinateSpace: self.selectedPhotoView.superview!)
+                    self.tempImageView.frame = feedViewController.view.convertRect( toPhoto.frame, fromCoordinateSpace: toPhoto.superview!)
                 }){ (Bool) -> Void in
                     self.tempImageView.removeFromSuperview()
                     self.finish()
                 }
         }
         
-//        UIView.animateWithDuration(0.1, animations: {
-//            fromViewController.view.alpha = 0
-//          
-//            }) { (finished: Bool) -> Void in
-//                UIView.animateWithDuration(self.duration * 0.5, animations: {
-//                    self.tempImageView.frame = feedViewController.view.convertRect( self.selectedPhotoView.frame, fromCoordinateSpace: self.selectedPhotoView.superview!)
-//                  
-//                    }) { (finished: Bool) -> Void in
-//                        self.tempImageView.removeFromSuperview()
-//                        self.finish()
-//                        
-//                }
-//        }
-//     
     }
 }
